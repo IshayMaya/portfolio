@@ -61,9 +61,10 @@
 @media screen and ( max-width: 540px) {
   .char {
     position: absolute;
-    bottom: 25px;
+    bottom: 0;
     right: 0;
     padding: 10px;
+    height: auto;
     &.exit {
       animation-name: exitMobile;
     }
