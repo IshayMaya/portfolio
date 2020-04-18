@@ -36,10 +36,8 @@ const Works = ({changed}) => {
                     return (
                         <div 
                         key={id}
-                        // className={styles.work}
                         style={style}
                         className={`${styles.work} ${className}`}
-                        // className={`${styles.work} ${openWork === i ? styles.open : styles.closed}`}
                         onClick={ev => toggleWork(ev,i)}>
                             <div 
                             style={{backgroundImage: `url('${imgUrl}')`}}

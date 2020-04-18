@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import logo from '../assets/images/logo.svg'
 import styles from './styles.module.scss'
 import Nav from './Nav'
 import Home from './Pages/Home'
@@ -58,8 +57,6 @@ const Layout = () => {
                 disableClick={disableClick}/>
                 <Char changed={tabChanged}>{charToShow}</Char>
             </section>
-           
-            {/* <img src={logo} className="App-logo" alt="logo" /> */}
         </section>
     )
 }

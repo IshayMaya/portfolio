@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Page from '../../../components/Page'
 import styles from './styles.module.scss'
 import letterBackground from '../../../assets/images/abstract.jpg'
 
-const Home = ({ tabs, currentTab, disableClick, changed }) => {
+const Home = ({ changed }) => {
 
     return (
         <Page className={styles.home} changed={changed}>
