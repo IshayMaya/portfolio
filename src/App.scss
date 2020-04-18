@@ -1,3 +1,15 @@
+
+:root {
+  --blueColor1-- : #5ba4cf;
+  --blueColor2-- : #298fca;
+  --blueColor3-- : #0079bf;
+  --blueColor4-- : #026aa7;
+  --blueColor5-- : #055a8c;
+  --blueColor6-- : #094c72;
+  --blackColor-- : #282c34;
+  --whiteColor-- : #f8f9fc;
+}
+
 .App {
   text-align: center;
 }
@@ -7,26 +19,13 @@
   pointer-events: none;
 }
 
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {

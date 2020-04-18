@@ -1,0 +1,72 @@
+.char {
+    font-size: 40vw;
+    text-transform: uppercase;
+    background-position: top;
+    background-size: cover;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-family: 'Baloo Bhai 2', cursive;
+    line-height: 25vw;
+    height: 25vw;
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-direction: normal;
+    padding:  0 50px;
+  
+    &.exit {
+      animation-name: exit;
+      animation-duration: 1s;
+      animation-timing-function: ease-in;
+      animation-direction: normal;
+    }
+  }
+
+
+@keyframes exit {
+    from {
+      transform: translateX(0) rotate(0deg) scale(1);
+    }
+    to {
+      transform: translateX(-100vw) rotate(360deg) scale(3);
+    }
+}
+
+@keyframes appear {
+  from {
+    transform: translateX(100vw) rotate(360deg) scale(3)
+  }
+  to {
+    transform: translateX(0) rotate(0deg) scale(1);;
+  }
+}
+@keyframes exitMobile {
+    from {
+      transform: translate(0,0) rotate(0deg) scale(1);
+    }
+    to {
+      transform: translate(-20vw, -100vh) rotate(360deg) scale(3);
+    }
+}
+
+@keyframes appearMobile  {
+  from {
+    transform: translate(20vw, 100vh) rotate(360deg) scale(3)
+  }
+  to {
+    transform: translate(0, 0) rotate(0deg) scale(1);;
+  }
+}
+
+@media screen and ( max-width: 540px) {
+  .char {
+    position: absolute;
+    bottom: 25px;
+    right: 0;
+    padding: 10px;
+    &.exit {
+      animation-name: exitMobile;
+    }
+  }
+
+}
