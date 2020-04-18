@@ -40,7 +40,7 @@ const Works = ({changed}) => {
                         className={`${styles.work} ${className}`}
                         onClick={ev => toggleWork(ev,i)}>
                             <div 
-                            // style={{backgroundImage: `url('${imgUrl}')`}}
+                            style={{backgroundImage: `url('${imgUrl}')`}}
                             className={styles.img}></div>
                             <div className={styles.details}>
                                 <div className={styles.top}>

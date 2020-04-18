@@ -19,11 +19,24 @@ const Layout = () => {
     const [isDisabled, setIsDisabled] = useState(false)
     const [charToShow, setCharToShow] = useState('')
     const [tabChanged, setTabChanged] = useState(false)
+    const [touchLocation, setTouchLocation] = useState({})
 
     useEffect(() => {
         const firstChar = tabs[currentTab].name.charAt(0)
         if ( firstChar !== charToShow) setCharToShow(firstChar)
     }, [setCharToShow, currentTab])
+
+    useEffect(() => {
+        const {start, end} = touchLocation
+        if (start && end ) {
+            if (Math.abs(start - end) > 30) {
+                const isLeft = end > start;
+                if (isLeft && currentTab > 0) setCurrectTab(i => i - 1)
+                if ( !isLeft && currentTab < (tabs.length - 1)) setCurrectTab(i => i + 1)
+            }
+            setTouchLocation({})
+        }
+    }, [touchLocation, setTouchLocation])
 
     const handleTabClick = index => {
         if ((currentTab !== index) && !isDisabled) {
@@ -37,6 +50,15 @@ const Layout = () => {
         }
     }
 
+    const handleTouchStart = ev => {
+        const [{ pageX }] = ev.touches
+        setTouchLocation(l => ({...l, start: pageX}))
+    }
+    const handleTouchEnd = ev => {
+        const [{ pageX }] = ev.changedTouches
+        setTouchLocation(l => ({...l, end: pageX}))
+    }
+
     const disableClick = bool => {
         setIsDisabled(bool)
     }
@@ -44,7 +66,10 @@ const Layout = () => {
     const CurrentPage = tabs[currentTab].cmp
 
     return (
-        <section className={styles.layout} style={{pointerEvents: isDisabled ? 'none' : 'auto'}}>
+        <section
+        className={styles.layout} style={{pointerEvents: isDisabled ? 'none' : 'auto'}}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}>
             <Nav 
             tabs={tabs}
             onTabClick={handleTabClick} 
