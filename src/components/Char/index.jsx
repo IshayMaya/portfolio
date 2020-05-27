@@ -1,6 +1,6 @@
 import React from 'react';
 import  './styles.scss'
-import charBackground from '../../assets/images/abstract.jpg'
+import charBackground from '../../assets/images/abstract2.png'
 
 const Char = ({children, changed}) => {
     return (

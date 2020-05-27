@@ -4,8 +4,9 @@
     align-items: center;
     h1 {
         font-size: 130px;
-        background-position: top;
-        background-size: cover;
+        background-position: center;
+        background-size: contain;
+        background-color: var(--whiteColor--);
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
         text-align: start;
