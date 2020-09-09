@@ -24,7 +24,7 @@ const Works = ({changed}) => {
     }
 
     const openLink = url => {
-        window.location = url
+        window.location.assign(url)
     }
 
     return (
